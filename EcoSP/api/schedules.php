@@ -1,6 +1,7 @@
 <?php
 
-require_once 'categories.php'
+require_once 'categories.php';
+
 $citizen_name = "";
 $citizen_email = "";
 $ecopoint = "";
@@ -40,15 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
     }*/
     
-    if($citizen_name == "" || $citizen_email == "" || $ecopoint == "" || $category_id == ""; || $weight_kg == "" || $scheduled_date == ""){
+    if($citizen_name == "" || $citizen_email == "" || $ecopoint == "" || $category_id == "" || $weight_kg == "" || $scheduled_date == ""){
         $mensagem = "Preencha todos os campos";
-    }elseif (!filter_var($citizen_email, FILTER_VALIDATE_EMAIL)){
+    }else if (!filter_var($citizen_email, FILTER_VALIDATE_EMAIL)){
         $mensagem = "Coloque um email válido";
-    }elseif ($weight_kg <= 0){
+    }else if ($weight_kg <= 0){
         $mensagem = "O peso deve ser maior que zero!";
-    }elseif ($scheduled_date < $data_atual ){
+    }else if ($scheduled_date < $data_atual ){
         $mensagem = "A data não pode ser menor que a data atual";
-    }elseif (){
+    }else{
         $ecopoints_earned = round(weight_kg * points_per_kg);
         
     }
