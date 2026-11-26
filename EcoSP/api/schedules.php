@@ -1,6 +1,6 @@
 <?php
 
-require_once 'categories.php';
+require_once '../conexao.php';
 
 header('Content-Type: application/json; charset=utf-8');
 
